@@ -8,6 +8,9 @@ environment:
 cache: 
 - source\packages -> **\packages.config
 
+before_build:
+- appveyor-retry dotnet restore
+
 build:
   project: DemoMap\DemoMap.sln  
   verbosity: normal
